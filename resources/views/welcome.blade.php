@@ -329,12 +329,46 @@
 
 </section>
 
-<!-- Footer -->
-<section class="container-fluid footer_section">
-    <p>
-        © {{ date('Y') }} Sistem Informasi RT. All Rights Reserved.
-    </p>
-</section>
+
+<footer class="footer_section">
+    <div class="container">
+        <div class="row py-5">
+
+            <div class="col-md-4 mb-4">
+                <h5 class="footer-brand">🏘️ Sistem Informasi RT</h5>
+                <p class="footer-desc">
+                    Platform digital untuk membantu pengurus RT dan warga
+                    dalam mengelola administrasi secara cepat dan transparan.
+                </p>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <h6 class="footer-heading">Navigasi</h6>
+                <ul class="footer-links">
+                    <li><a href="{{ url('/') }}">🏠 Beranda</a></li>
+                    <li><a href="#about">ℹ️ Tentang</a></li>
+                    <li><a href="#features">⚙️ Fitur</a></li>
+                    <li><a href="{{ route('login') }}">🔐 Login</a></li>
+                    <li><a href="{{ route('register') }}">📝 Daftar</a></li>
+                </ul>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <h6 class="footer-heading">Layanan Kami</h6>
+                <ul class="footer-links">
+                    <li><a href="#">👥 Data Warga</a></li>
+                    <li><a href="#">📄 Surat Online</a></li>
+                    <li><a href="#">📅 Kegiatan RT</a></li>
+                    <li><a href="#">📊 Laporan RT</a></li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="footer-bottom">
+            <p>© {{ date('Y') }} <strong>Sistem Informasi RT</strong>. All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>
 
 <script src="{{ asset('js/jquery-3.4.1.min.js') }}"></script>
 <script src="{{ asset('js/bootstrap.js') }}"></script>
@@ -360,4 +394,3 @@ $('.owl-carousel').owlCarousel({
 
 </body>
 </html>
-```

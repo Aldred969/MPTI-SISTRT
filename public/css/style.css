@@ -69,11 +69,24 @@ body {
 }
 
 /*header section*/
+/* Hero background gambar lingkungan RT */
 .hero_area {
-  height: 100vh;
-  background-color: #b5caee;
-  background-image: url(../images/hero-bg.jpg);
-  background-size: cover;
+    background: url('../images/rt.png') center center / cover no-repeat;
+    position: relative;
+}
+
+.hero_area::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(0,0,0,0.72) 0%, rgba(20,40,80,0.65) 100%);
+    z-index: 0;
+}
+
+.hero_area .header_section,
+.hero_area .slider_section {
+    position: relative;
+    z-index: 1;
 }
 
 .sub_page .hero_area {
@@ -687,27 +700,73 @@ a:focus {
 }
 
 /* footer section*/
+/* Footer Styling */
 .footer_section {
-  background-color: #232323;
-  font-weight: 500;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+    background: linear-gradient(135deg, #0f1923 0%, #1a2a3a 100%);
+    color: #cdd9e5;
+    padding-top: 10px;
 }
 
-.footer_section p {
-  padding: 20px 65px;
-  color: #fbfcfd;
-  margin: 0 auto;
-  text-align: center;
-  border-top: 1px solid #ffffff;
+.footer-brand {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 12px;
 }
 
-.footer_section a {
-  color: #fbfcfd;
+.footer-desc {
+    font-size: 0.9rem;
+    color: #99aabb;
+    line-height: 1.7;
+}
+
+.footer-heading {
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #4ea8de;
+    margin-bottom: 14px;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 8px;
+}
+
+.footer-links a {
+    color: #99aabb;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s ease, padding-left 0.2s ease;
+}
+
+.footer-links a:hover {
+    color: #4ea8de;
+    padding-left: 4px;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding: 20px 0 10px;
+    text-align: center;
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #7a8fa0;
+}
+
+.footer-sub {
+    margin-top: 4px !important;
+    font-size: 0.8rem !important;
+    color: #556677 !important;
 }
 
 /* end footer section*/
