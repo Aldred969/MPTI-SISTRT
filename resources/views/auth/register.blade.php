@@ -39,7 +39,7 @@
             </div>
 
             @error('nik')
-                <small style="color:red">
+                <small>
                     {{ $message }}
                 </small>
             @enderror
@@ -56,7 +56,7 @@
             </div>
 
             @error('nama')
-                <small style="color:red">
+                <small>
                     {{ $message }}
                 </small>
             @enderror
@@ -73,7 +73,7 @@
             </div>
 
             @error('email')
-                <small style="color:red">
+                <small>
                     {{ $message }}
                 </small>
             @enderror
@@ -89,7 +89,7 @@
             </div>
 
             @error('no_hp')
-                <small style="color:red">
+                <small>
                     {{ $message }}
                 </small>
             @enderror
@@ -105,7 +105,7 @@
             </div>
 
             @error('password')
-                <small style="color:red">
+                <small>
                     {{ $message }}
                 </small>
             @enderror
