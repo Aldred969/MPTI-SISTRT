@@ -1,101 +1,146 @@
-<x-guest-layout>
-    <form method="POST" action="{{ route('register') }}">
-    @csrf
+<!DOCTYPE html>
+<html lang="en">
 
-    <!-- NIK -->
-    <div>
-        <x-input-label for="nik" value="NIK" />
-        <x-text-input
-            id="nik"
-            class="block mt-1 w-full"
-            type="text"
-            name="nik"
-            :value="old('nik')"
-            required
-            autofocus />
-        <x-input-error :messages="$errors->get('nik')" class="mt-2" />
-    </div>
+<head>
+    <meta charset="UTF-8">
+    <title>Register - Sistem Informasi RT</title>
 
-    <!-- Nama -->
-    <div class="mt-4">
-        <x-input-label for="nama" value="Nama Lengkap" />
-        <x-text-input
-            id="nama"
-            class="block mt-1 w-full"
-            type="text"
-            name="nama"
-            :value="old('nama')"
-            required />
-        <x-input-error :messages="$errors->get('nama')" class="mt-2" />
-    </div>
+    <link rel="stylesheet" href="{{ asset('css/style1.css') }}">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
 
-    <!-- Email -->
-    <div class="mt-4">
-        <x-input-label for="email" value="Email" />
-        <x-text-input
-            id="email"
-            class="block mt-1 w-full"
-            type="email"
-            name="email"
-            :value="old('email')"
-            required />
-        <x-input-error :messages="$errors->get('email')" class="mt-2" />
-    </div>
+<body>
 
-    <!-- No HP -->
-    <div class="mt-4">
-        <x-input-label for="no_hp" value="No HP" />
-        <x-text-input
-            id="no_hp"
-            class="block mt-1 w-full"
-            type="text"
-            name="no_hp"
-            :value="old('no_hp')" />
-        <x-input-error :messages="$errors->get('no_hp')" class="mt-2" />
-    </div>
+<div class="center">
 
-    <!-- Password -->
-    <div class="mt-4">
-        <x-input-label for="password" value="Password" />
+    <div class="container">
 
-        <x-text-input
-            id="password"
-            class="block mt-1 w-full"
-            type="password"
-            name="password"
-            required />
-
-        <x-input-error :messages="$errors->get('password')" class="mt-2" />
-    </div>
-
-    <!-- Konfirmasi Password -->
-    <div class="mt-4">
-        <x-input-label
-            for="password_confirmation"
-            value="Konfirmasi Password" />
-
-        <x-text-input
-            id="password_confirmation"
-            class="block mt-1 w-full"
-            type="password"
-            name="password_confirmation"
-            required />
-
-        <x-input-error
-            :messages="$errors->get('password_confirmation')"
-            class="mt-2" />
-    </div>
-
-    <div class="flex items-center justify-end mt-4">
-        <a
-            class="underline text-sm text-gray-600 hover:text-gray-900"
-            href="{{ route('login') }}">
-            Sudah punya akun?
+        <a href="{{ url('/') }}"
+           class="close-btn fas fa-times"
+           title="Close">
         </a>
 
-        <x-primary-button class="ms-4">
-            Register
-        </x-primary-button>
+        <div class="text">
+            Registrasi Warga
+        </div>
+
+        <form method="POST" action="{{ route('register') }}">
+            @csrf
+
+            <!-- NIK -->
+            <div class="data">
+                <label>NIK</label>
+
+                <input type="text"
+                       name="nik"
+                       value="{{ old('nik') }}"
+                       required>
+            </div>
+
+            @error('nik')
+                <small style="color:red">
+                    {{ $message }}
+                </small>
+            @enderror
+
+
+            <!-- Nama -->
+            <div class="data">
+                <label>Nama Lengkap</label>
+
+                <input type="text"
+                       name="nama"
+                       value="{{ old('nama') }}"
+                       required>
+            </div>
+
+            @error('nama')
+                <small style="color:red">
+                    {{ $message }}
+                </small>
+            @enderror
+
+
+            <!-- Email -->
+            <div class="data">
+                <label>Email</label>
+
+                <input type="email"
+                       name="email"
+                       value="{{ old('email') }}"
+                       required>
+            </div>
+
+            @error('email')
+                <small style="color:red">
+                    {{ $message }}
+                </small>
+            @enderror
+
+
+            <!-- No HP -->
+            <div class="data">
+                <label>No HP</label>
+
+                <input type="text"
+                       name="no_hp"
+                       value="{{ old('no_hp') }}">
+            </div>
+
+            @error('no_hp')
+                <small style="color:red">
+                    {{ $message }}
+                </small>
+            @enderror
+
+
+            <!-- Password -->
+            <div class="data">
+                <label>Password</label>
+
+                <input type="password"
+                       name="password"
+                       required>
+            </div>
+
+            @error('password')
+                <small style="color:red">
+                    {{ $message }}
+                </small>
+            @enderror
+
+
+            <!-- Konfirmasi Password -->
+            <div class="data">
+                <label>Konfirmasi Password</label>
+
+                <input type="password"
+                       name="password_confirmation"
+                       required>
+            </div>
+
+            <div class="button">
+                <div class="inner"></div>
+
+                <button type="submit">
+                    Register
+                </button>
+            </div>
+
+            <div class="signup-link">
+                Sudah punya akun?
+
+                <a href="{{ route('login') }}">
+                    Login Sekarang
+                </a>
+            </div>
+
+        </form>
+
     </div>
-</form>
-</x-guest-layout>
+
+</div>
+
+</body>
+</html>
